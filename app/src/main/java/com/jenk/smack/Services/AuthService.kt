@@ -12,17 +12,15 @@ import org.json.JSONObject
 
 object AuthService {
 
-
-    fun registerUser(context: Context, email : String, password : String, complete: (Boolean) -> Unit){
-
-        val url = URL_REGISTER
+    fun registerUser(context: Context, email: String, password: String, complete: (Boolean) -> Unit) {
 
         val jsonBody = JSONObject()
         jsonBody.put("email", email)
         jsonBody.put("password", password)
         val requestBody = jsonBody.toString()
 
-        val registerRequest = object : StringRequest(Request.Method.POST, url, Response.Listener { _ ->
+        val registerRequest = object : StringRequest(Method.POST, URL_REGISTER, Response.Listener { response ->
+            println(response)
             complete(true)
         }, Response.ErrorListener { error ->
             Log.d("ERROR", "Could not register user: $error")
