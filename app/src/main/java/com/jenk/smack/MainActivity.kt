@@ -8,31 +8,23 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        //floating action bar
-//        fab.setOnClickListener { view ->
-//            //snackbar pop up message kinda like toast
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                    .setAction("Action", null).show()
-//        }
 
         //when you click the drawer on the side
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
-
-        //when you click on the items on draw
-//        nav_view.setNavigationItemSelectedListener(this)
     }
 
     override fun onBackPressed() {
@@ -42,6 +34,32 @@ class MainActivity : AppCompatActivity(){
             super.onBackPressed()
         }
     }
+
+    fun loginBtnNavClicked(view: View) {
+
+    }
+
+    fun addChannelBtnClicked(view: View) {
+
+    }
+
+    fun sendMessageBtnClicked(view: View){
+
+    }
+
+}
+
+
+
+
+
+
+//floating action bar
+//        fab.setOnClickListener { view ->
+//            //snackbar pop up message kinda like toast
+//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                    .setAction("Action", null).show()
+//        }
 
 //    override fun onCreateOptionsMenu(menu: Menu): Boolean {
 //        // Inflate the menu; this adds items to the action bar if it is present.
@@ -85,4 +103,3 @@ class MainActivity : AppCompatActivity(){
 //        drawer_layout.closeDrawer(GravityCompat.START)
 //        return true
 //    }
-}
