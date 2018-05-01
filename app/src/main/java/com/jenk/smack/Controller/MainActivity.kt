@@ -4,7 +4,6 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.content.res.Resources
 import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.content.LocalBroadcastManager
@@ -14,9 +13,8 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.jenk.smack.R
 import com.jenk.smack.Services.AuthService
-import com.jenk.smack.UserDataService
+import com.jenk.smack.Services.UserDataService
 import com.jenk.smack.Utilities.BROADCAST_USER_DATA_CHANGE
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.nav_header_main.*
@@ -67,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         if(AuthService.isLoggedIn){
             //log out
             UserDataService.logout()
-            userNameNavHeader.text = "LOGIN"
+            userNameNavHeader.text = ""
             userEmailNavHeader.text = ""
             userImageNavHeader.setImageResource(R.drawable.profiledefault)
             userImageNavHeader.setBackgroundColor(Color.TRANSPARENT)

@@ -1,7 +1,6 @@
-package com.jenk.smack
+package com.jenk.smack.Services
 
 import android.graphics.Color
-import com.jenk.smack.Services.AuthService
 import java.util.*
 
 object UserDataService {
